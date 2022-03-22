@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BaiTH5.Models.Monhoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenmh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chyennganh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sohoctrinh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenmh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chyennganh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sohoctrinh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Mamh }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Mamh }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Mamh })
+        </td>
+    </tr>
+}
+
+</table>

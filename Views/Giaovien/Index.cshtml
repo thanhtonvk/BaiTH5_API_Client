@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BaiTH5.Models.Giaovien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tengv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chyennganh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sdt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tengv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chyennganh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sdt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Magv }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Magv }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Magv })
+        </td>
+    </tr>
+}
+
+</table>

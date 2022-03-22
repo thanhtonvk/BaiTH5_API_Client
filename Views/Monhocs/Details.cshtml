@@ -1,0 +1,43 @@
+﻿@model BaiTH5.Models.Monhoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Monhoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenmh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenmh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chyennganh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chyennganh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sohoctrinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sohoctrinh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Mamh }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
