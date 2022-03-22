@@ -132,6 +132,7 @@ namespace BaiTH5.Controllers
             {
                 using (var client = new HttpClient())
                 {
+                    client.BaseAddress = new Uri(baseUrl);
                     var response = client.PutAsJsonAsync("MonHoc", monhoc);
                     response.Wait();
                     var result = response.Result;
@@ -168,6 +169,7 @@ namespace BaiTH5.Controllers
         {
             using (var client = new HttpClient())
             {
+                client.BaseAddress = new Uri(baseUrl);
                 var response = client.DeleteAsync($"MonHoc?id={id}");
                 response.Wait();
                 var result = response.Result;
